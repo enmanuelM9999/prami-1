@@ -16,7 +16,7 @@ passport.use('director.login', new LocalStrategy({
 
     //Consultar si existe el codigo ingresado en la tabla del Director
     const rowsDirector = await pool.query('SELECT fkIdUsuario FROM director WHERE codigoDirector = ?', [codigo]);
-    let fkIdUsuario = 0;
+    var fkIdUsuario = 0;
 
     //Si la consulta arrojó al menos 1 resultado...
     if (rowsDirector.length > 0) {
